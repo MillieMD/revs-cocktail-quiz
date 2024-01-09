@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title> Learn Your Cocktails - Revolution Bars Group </title>
+    <link rel = "stylesheet" href = "css/index.css">
+
+</head>
+
+<body>
+
+    <div id = "home-page">
+
+        <div class = "header"> 
+
+            <!-- <img src = "img/revs.png"> -->
+
+            <h1> Revolution Cocktails </h1>
+
+        </div>
+
+        <div class = "img-span"> 
+
+            <!-- Image from  -->
+            <!-- <img src = "img/banner.png"> -->
+
+            <button type = "button" onclick = "learn(selected)"> Learn </button>
+
+        </div>
+
+        <h2> Choose a collection to study </h2>
+
+        <div class = "row" id = "collection-wrapper"> <!-- Wrapper class to contain collection toggles -->
+
+            <div class = "card" id = "All"> 
+
+                <h3> All </h3>
+
+                <p id = "status"></p>
+
+                <div class = "row">
+
+                    <button onclick = "viewCollection('All')"> View </button> 
+                    <button> Edit </button>
+
+                </div>
+
+            </div> <!-- End of card -->
+
+        </div> <!-- End of row -->
+
+    </div>
+
+</body>
+
+<script src = "js/collections.js"></script> <!-- Javascript for managing collections + displaying collection -->
+<script src = "js/learn.js"></script> <!-- Javascript for running fill in the blanks game -->
+
+</html>

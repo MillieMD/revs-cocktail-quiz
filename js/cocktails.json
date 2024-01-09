@@ -1,0 +1,552 @@
+{
+
+    "Cocktails":[
+
+        {
+
+            "id": 0,
+            
+            "name":"A Proper Melt",
+            "glass": "Can",
+            "method":"Shake and Straight Pour",
+
+            "ingredients": [
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Lemon Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Malibu",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Blue Curacoa",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Absolute Raspberry",
+                    "amount": 37.5
+                },
+
+                {
+                    "name":"Lemonade",
+                    "amount": 100
+                }
+
+            ],
+
+            "garnishes": ["Half Ice Lolly", "Lemon Wheel"]
+
+        },
+
+        {
+
+            "id": 1,
+            
+            "name":"Amaretto Sour",
+            "glass": "Vintage Rocks",
+            "method":"Shake and Strain",
+
+            "ingredients": [
+
+                {
+                    "name":"MS Better Bitter",
+                    "amount": 1
+                },
+
+                {
+                    "name":"Angostura Bitter",
+                    "amount": 2
+                },
+
+                {
+                    "name":"Lemon Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Amaretto",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Cherry", "Lemon Slice"]
+
+        },
+
+        {
+
+            "id": 2,
+            
+            "name":"Aperol Spritz",
+            "glass": "Wine",
+            "method":"Build",
+
+            "ingredients": [
+
+                {
+                    "name":"Aperol",
+                    "amount": 50
+                },
+
+                {
+                    "name":"Prosecco",
+                    "amount": 75
+                },
+
+                {
+                    "name":"Soda",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Dehydrated Orange Wheel"]
+
+        },
+
+        {
+
+            "id": 3,
+            
+            "name":"Blank Canvas",
+            "glass": "140z",
+            "method":"Shake and Straight Pour",
+
+            "ingredients": [
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Lemon Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Ketel One",
+                    "amount": 37.5
+                },
+
+                {
+                    "name":"Soda",
+                    "amount": 50
+                },
+
+                {
+                    "name":"Flavour Shot",
+                    "amount": 25
+                }
+
+            ],
+
+            "garnishes": ["Lime Wedge", "Vodka Stirrer"]
+
+        },
+
+        {
+
+            "id": 4,
+            
+            "name":"Bloody Mary",
+            "glass": "Gatsby",
+            "method":"Roll",
+
+            "ingredients": [
+
+                {
+                    "name":"Tabasco",
+                    "amount": 1
+                },
+
+                {
+                    "name":"Lemon Juice",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Big Tom",
+                    "amount": 1
+                },
+
+                {
+                    "name":"Ketel One",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Lime Wedge", "Seedbag", "Black Pepper"]
+
+        },
+
+        {
+
+            "id": 5,
+            
+            "name":"Bubble Vodka Bramble",
+            "glass": "Vintage Vodka Goblet",
+            "method":"Build",
+
+            "ingredients": [
+
+                {
+                    "name":"Blackcurrant Cordial",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Lemon Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Absolut Wild Berry",
+                    "amount": 50
+                },
+
+                {
+                    "name":"Soda",
+                    "amount": 100
+                },
+
+                {
+                    "name":"Boba",
+                    "amount": 1
+                }
+            ],
+
+            "garnishes": ["Lemon Wheel", "Boba Straw"]
+
+        },
+
+        {
+
+            "id": 6,
+            
+            "name":"Bubblegum Daiquiri",
+            "glass": "Hurricane",
+            "method":"Blend",
+
+            "ingredients": [
+
+                {
+                    "name":"Apple Juice",
+                    "amount": 50
+                },
+
+                {
+                    "name":"Lemon Juice",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Bubblegum Syrup",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Bubblegum Flavour",
+                    "amount": 75
+                }
+
+            ],
+
+            "garnishes": ["3 Flying Saucers", "Stripy Straw"]
+
+        },
+
+        {
+
+            "id": 7,
+            
+            "name":"Cheeky Vimto",
+            "glass": "Hurricane",
+            "method":"Shake and Strain",
+
+            "ingredients": [
+
+                {
+                    "name":"Lime Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Grenadine",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Blue Bubblegum Flavour",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Ciroc Red Berry",
+                    "amount": 25
+                },
+
+                {
+                    "name":"WKD Blue",
+                    "amount": 125
+                }
+
+            ],
+
+            "garnishes": ["Vodka Stirrer", "Lime Wedge"]
+
+        },
+
+        {
+
+            "id": 8,
+            
+            "name":"Chilli Margarita - Frozen",
+            "glass": "Vintage Coupette",
+            "method":"Blend",
+
+            "ingredients": [
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Lime Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Fiery Chilli Flavour",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Cointreau",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Olmeca Resposado",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Salt Rim", "Lime Wheel"]
+
+        },
+
+        {
+
+            "id": 9,
+            
+            "name":"Chilli Margarita - Rocks",
+            "glass": "Vintage Rocks",
+            "method":"Shake and Strain",
+
+            "ingredients": [
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Lime Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Fiery Chilli Flavour",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Cointreau",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Olmeca Resposado",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Salt Rim", "Lime Wheel"]
+
+        },
+
+        {
+
+            "id": 10,
+            
+            "name":"Chilli Margarita - Straight Up",
+            "glass": "Coupette",
+            "method":"Shake and Double Strain",
+
+            "ingredients": [
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Lime Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Fiery Chilli Flavour",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Cointreau",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Olmeca Resposado",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Salt Rim", "Lime Wheel"]
+
+        },
+
+        {
+
+            "id": 11,
+            
+            "name":"Classic Margarita - Frozen",
+            "glass": "Vintage Coupette",
+            "method":"Blend",
+
+            "ingredients": [
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Lime Juice",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Cointreau",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Olmeca Resposado",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Salt Rim", "Lime Wheel"]
+
+        },
+
+        
+        {
+
+            "id": 12,
+            
+            "name":"Classic Margarita - Rocks",
+            "glass": "Vintage Rocks",
+            "method":"Shake and Strain",
+
+            "ingredients": [
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Lime Juice",
+                    "amount": 25
+                },
+                
+                {
+                    "name":"Cointreau",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Olmeca Resposado",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Salt Rim", "Lime Wheel"]
+
+        },
+
+        
+        {
+
+            "id": 13,
+            
+            "name":"Classic Margarita - Straight Up",
+            "glass": "Vintage Coupette",
+            "method":"Shake and Double Strain",
+
+            "ingredients": [
+
+                {
+                    "name":"Sugar Syrup",
+                    "amount": 25
+                },
+
+                {
+                    "name":"Lime Juice",
+                    "amount": 25
+                },
+                
+                {
+                    "name":"Cointreau",
+                    "amount": 12.5
+                },
+
+                {
+                    "name":"Olmeca Resposado",
+                    "amount": 50
+                }
+
+            ],
+
+            "garnishes": ["Salt Rim", "Lime Wheel"]
+
+        }
+
+    ]
+
+}
