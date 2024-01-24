@@ -27,6 +27,7 @@ async function initialiseCollections(){
 
     let b = document.createElement("button");
     b.id = "add-collection";
+    b.classList.add("card");
     b.setAttribute("type", "button");
     b.setAttribute("onclick","createCollection()");
     
