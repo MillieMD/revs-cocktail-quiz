@@ -1,17 +1,21 @@
 /* Millie MD 2024 */
 
+/* COLOURS */
+/* From Revolution Bars Group Website */
 :root{
 
     --black: #000000;
     --white: #ffffff;
 
-    --red: #da2050;
+    --red: #da2050; /* Incorrect answers*/
     --orange: #f47525;
-    --blue: #06BEE6;
-    --green: #19da9c;
+    --blue: #06BEE6; /* Corrections? */
+    --green: #19da9c; /* Correct answers*/
     --pink: #EE1E91;
     --purple: #53328C;
 }
+
+/* GENERAL */
 
 * {
 
@@ -27,8 +31,10 @@ html, body{
     width: 100%;
     height: 100%;
 
-}
+    font-size: 100%;
+    font-weight: 400;
 
+}
 
 header{
 
@@ -40,12 +46,62 @@ header{
 
 }
 
+.ver-flex{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.hor-flex{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+.space-apart{
+    justify-content: space-between;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    font-size: 4.210rem; 
+}
+
+h2 {
+    font-size: 3.158rem; 
+}
+
+h3 {
+    font-size: 2.369rem; 
+}
+
+h4 {
+    font-size: 1.777rem; 
+}
+
+h5 {
+    font-size: 1.333rem;
+}
+
+p{
+    font-size: 1rem;
+}
+
+h1, h2, h3{
+    font-weight: 700;
+}
+
+/* HOME PAGE */
+
 #home-page{
     min-height: 100%;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     text-align: center;
 }
@@ -56,11 +112,9 @@ header{
     background-image: linear-gradient(to right, var(--red) 0%, #f47525 40%, var(--orange) 60%, var(--red) 100%);
     color: var(--white);
 
-    font-size: 4rem;
-
     border-radius: 5px;
 
-    transition: ease 0.3s;
+    transition:all ease 0.3s;
 
     padding: 2vw 4vw;
     margin: 1vw;
@@ -69,6 +123,51 @@ header{
 
 #home-page button:hover{
     background-image: linear-gradient(to right, var(--green) 0%, var(--blue) 40%, var(--blue) 60%, var(--green) 100%)
+}
+
+img {
+
+    max-width: 100%;
+}
+
+/* LEARN MODE */
+
+#quiz-wrapper{
+
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Question formatting */
+
+.question{
+
+    max-height: 80%;
+
+    padding: 0.2vw;
+
+    border: solid 2px lightgrey;
+
+
+}
+
+.question img {
+
+    object-fit: contain;
+
+    max-height: 80%;
+
+}
+
+/* Controls */
+
+input{
+
+
 }
 
 

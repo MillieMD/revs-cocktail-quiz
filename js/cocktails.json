@@ -1,6 +1,6 @@
 {
 
-    "Cocktails":[
+    "cocktails":[
 
         {
 
@@ -125,7 +125,7 @@
             "id": 3,
             
             "name":"Blank Canvas",
-            "glass": "140z",
+            "glass": "14oz",
             "method":"Shake and Straight Pour",
 
             "ingredients": [
