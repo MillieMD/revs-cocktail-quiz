@@ -70,6 +70,20 @@ header{
     align-items: center;
 }
 
+button{
+
+    border: 0;
+    border-radius: 0.5vmin;
+
+    transition:all ease 0.3s;
+
+    padding: 2vw 4vw;
+    margin: 1vw;
+
+    color: var(--white);
+
+}
+
 /* TYPOGRAPHY */
 
 h1 {
@@ -113,27 +127,8 @@ h1, h2, h3{
 }
 
 #home-page button{
-
-    border: 0;
     background-image: linear-gradient(to right, var(--red) 0%, #f47525 40%, var(--orange) 60%, var(--red) 100%);
-    color: var(--white);
 
-    border-radius: 5px;
-
-    transition:all ease 0.3s;
-
-    padding: 2vw 4vw;
-    margin: 1vw;
-
-}
-
-#home-page button:hover{
-    background-image: linear-gradient(to right, var(--green) 0%, var(--blue) 40%, var(--blue) 60%, var(--green) 100%)
-}
-
-img {
-
-    max-width: 100%;
 }
 
 /* LEARN MODE */
@@ -169,7 +164,7 @@ img {
 .question img {
 
     object-fit: contain;
-    max-width: 40%;
+    max-width: 25%;
 
 }
 
@@ -183,9 +178,27 @@ img {
 
 /* Controls */
 
-input{
+.question input{
 
+    font-weight: bold;
+    background-color: #f5f4f4;
+    padding: 0.25vw;
+    margin: 0.25vw;
+
+    border: solid 1px lightgrey;
+    border-radius: 0.5vmin;
+
+    text-align: center;
 
 }
+
+#next-button{
+    background-image: linear-gradient(to right, var(--purple) 0%, var(--pink) 40%, var(--pink) 60%, var(--purple) 100%);
+}
+
+#check-button{
+    background-image: linear-gradient(to right, var(--green) 0%, var(--blue) 40%, var(--blue) 60%, var(--green) 100%);
+}
+
 
 

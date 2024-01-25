@@ -133,7 +133,7 @@ async function pageSetup(){
     check.id = "check-button";
     check.setAttribute("onclick", "CheckAnswers()");
     check.setAttribute("type", "button");
-    check.innerHTML = "Check Answers";
+    check.innerHTML = "<h4>Check Answers</h4>";
     
     wrapper.append(check);
 
@@ -142,7 +142,7 @@ async function pageSetup(){
     next.setAttribute("onclick", "NextCocktail()");
     next.setAttribute("type", "button");
     next.style.display = "none";
-    next.innerHTML = "Next Cocktail";
+    next.innerHTML = "<h4>Next Cocktail</h4>";
 
     wrapper.append(next);
 
@@ -217,7 +217,7 @@ function NextCocktail(){
 
     if(CURRENT_QUESTION == QUANTITY-1){
         document.getElementById("next-button").setAttribute("onclick", "Finish()");
-        document.getElementById("next-button").innerHTML = "Back to Home Page";
+        document.getElementById("next-button").innerHTML = "<h4>Back to Home Page</h4>";
     }
 
     document.getElementById("cocktail"+CURRENT_QUESTION).style.display = "flex";
