@@ -23,20 +23,20 @@ async function pageSetup(){
 
     cocktails = cocktails.cocktails;
 
+    console.log(cocktails);
+
     response = await fetch("js/collections.json");
     collections = await response.json();
-    unsorted = collections.collections[collectionid].included // I know it looks like gibberish, it's the collection indicated by the limiter in the array of collections within collections.json
+    collection = collections.collections[collectionid].included // I know it looks like gibberish, it's the collection indicated by the limiter in the array of collections within collections.json
                                                               // Probably needs better name
 
-    collection = unsorted.map(value => ({ value, sort: Math.random() }))
-                            .sort((a, b) => a.sort - b.sort)
-                            .map(({ value }) => value) // Shuffle into a random order
+    console.log(collection)
 
     var i = 0;
-    for(var id in collection){ // For every cocktail in the collection
+    for(id = 0; id < cocktails.length; id++){ // For every cocktail in the collection
 
-        if(id >= cocktails.length){ // Limit to the ones i've actually put into the json file
-            break;
+        if(!collection.includes(id)){
+            continue; // Only include the ones in the collection
         }
 
         cocktail = cocktails[id];
