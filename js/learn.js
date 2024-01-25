@@ -5,11 +5,11 @@ async function pageSetup(){
 
     document.getElementById("home-page").style.display = "none";
 
-    let wrapper = document.createElement("form");
+    let wrapper = document.createElement("div");
     wrapper.setAttribute("role", "main");
     wrapper.id = "quiz-wrapper";
 
-    document.getElementById("body").append(wrapper);
+    document.body.append(wrapper);
 
     var collectionid = 0;
 
@@ -43,20 +43,22 @@ async function pageSetup(){
 
         console.log(id + ": loading " + cocktail.name + "... "); // TODO: remove
 
-        let q = document.createElement("div");
+        let q = document.createElement("form");
         q.classList.add("hor-flex");
         q.classList.add("question");
         q.id = "cocktail" + i;
 
         let glass = document.createElement("div");
         glass.classList.add("ver-flex");
+        glass.classList.add("center");
 
         let glassImg = document.createElement("img");
         glassImg.src = "img/" + cocktail.glass.toLowerCase() + ".png";
         glass.append(glassImg);
 
         let glassText = document.createElement("input");
-        glassText.dataset.glass = cocktail.glass;
+        glassText.id = "glass";
+        glassText.dataset.answer = cocktail.glass.toLowerCase();
         glass.append(glassText);
 
         q.append(glass);
@@ -77,7 +79,8 @@ async function pageSetup(){
             ing.id = "ingredient" + j;
 
             let amt = document.createElement("input");
-            amt.dataset.amount = cocktail.ingredients[j].amount;
+            amt.id = "ingredient"+j;
+            amt.dataset.answer = cocktail.ingredients[j].amount;
             ing.append(amt);
 
             let ingname = document.createElement("p");
@@ -90,12 +93,12 @@ async function pageSetup(){
 
         let garnishes = document.createElement("div");
         garnishes.innerHTML = "<h5>Garnishes: </h5> ";
-        garnishes.dataset.garnishes = cocktail.garnishes;
         garnishes.classList.add("hor-flex");
 
         for(j = 0; j < cocktail.garnishes.length; j++){
 
             let g = document.createElement("input");
+            g.dataset.options = cocktail.garnishes.toString().toLowerCase();
             g.id = "garnish" + j;
 
             garnishes.append(g);
@@ -108,10 +111,10 @@ async function pageSetup(){
         method.classList.add("hor-flex");
         method.classList.add("space-apart");
         method.innerHTML = "<h5>Method: </h5> ";
-        method.dataset.method = cocktail.method;
 
         methodinput = document.createElement("input");
         methodinput.setAttribute("type", "text");
+        methodinput.dataset.answer = cocktail.method.toLowerCase();
         method.append(methodinput);
 
         info.append(method);
@@ -150,9 +153,55 @@ function CheckAnswers(){
 
     //check answers, show next button
 
-    let question = document.getElementById("cocktail"+CURRENT_QUESTION);
+    const garnishCheck = /garnish+\d*/; // Regex to detect garnish, as they are not in a set order they need to be checked differently
 
+    let inputs = document.forms["cocktail"+CURRENT_QUESTION].getElementsByTagName("input");
+    let garnishes = [];
+
+    for(i = 0; i < inputs.length; i++){
+        
+        if(inputs[i].id.match(garnishCheck)){
+            garnishes.push(inputs[i]);
+            continue;
+        }
+
+        if(inputs[i].value != inputs[i].dataset.answer){
+            inputs[i].value = inputs[i].dataset.answer;
+            inputs[i].classList.add("incorrect");
+        }else{
+
+            inputs[i].classList.add("correct");
+        }
+
+    }
+
+    let garnishOptions = garnishes[0].dataset.options.trim().split(",");
+    console.log(garnishOptions);
+
+    for(i = 0; i < garnishes.length; i++){
+        
+        if(garnishOptions.includes(garnishes[i].value)){
+            garnishOptions.splice(garnishOptions.indexOf(garnishes[i].value), 1);  
+            garnishes[i].classList.add("correct");
+        
+        }else{
+            garnishes[i].value = ""; // used to identify where corrections should go
+            garnishes[i].classList.add("incorrect");
+        }
+
+    }
+
+    for(i = 0; i < garnishes.length; i++){
+        
+        if(garnishes[i].value == ""){
+            garnishes[i].value = garnishOptions[garnishOptions.length - 1];
+            garnishOptions.pop();
+        }
+
+    }
+    
     document.getElementById("next-button").style.display = "block";
+    document.getElementById("check-button").style.display = "none";
 
 }
 
@@ -173,6 +222,7 @@ function NextCocktail(){
 
     document.getElementById("cocktail"+CURRENT_QUESTION).style.display = "flex";
     document.getElementById("next-button").style.display = "none";
+    document.getElementById("check-button").style.display = "block";
 
     return false;
 
@@ -180,9 +230,16 @@ function NextCocktail(){
 
 function Finish(){
 
+    CURRENT_QUESTION = 0;
+    QUANTITY = 0;
+
     document.getElementById("quiz-wrapper").remove();
     document.getElementById("home-page").style.display = "flex";
 
     return false;
 
 }
+
+function shuffle(){
+}
+

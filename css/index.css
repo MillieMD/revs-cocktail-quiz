@@ -51,6 +51,7 @@ header{
     flex-direction: column;
 
     justify-content: center;
+
 }
 
 .hor-flex{
@@ -58,10 +59,15 @@ header{
     flex-direction: row;
 
     justify-content: center;
+
 }
 
 .space-apart{
     justify-content: space-between;
+}
+
+.center{
+    align-items: center;
 }
 
 /* TYPOGRAPHY */
@@ -140,13 +146,18 @@ img {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding: 1vw;
 }
 
 /* Question formatting */
 
 .question{
 
-    max-height: 80%;
+    min-width: 50%;
+    max-width: 80%;
+
+    min-height: 70%;
+    max-height: 100%;
 
     padding: 0.2vw;
 
@@ -158,9 +169,16 @@ img {
 .question img {
 
     object-fit: contain;
+    max-width: 40%;
 
-    max-height: 80%;
+}
 
+.incorrect{
+    color: var(--red);
+}
+
+.correct{
+    color: var(--green);
 }
 
 /* Controls */
