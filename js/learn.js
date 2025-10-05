@@ -80,6 +80,7 @@ function createCocktail(name, ingredients, glassName, garnishes, method, idNum){
 
     let garnishesHTML = document.createElement("div");
     garnishesHTML.classList.add("hor-flex");
+    garnishesHTML.classList.add("garnish");
 
     for(j = 0; j < garnishes.length; j++){
 
