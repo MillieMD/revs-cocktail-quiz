@@ -8,6 +8,12 @@ function createCocktail(name, ingredients, glassName, garnishes, method, idNum){
     q.classList.add("question");
     q.id = "cocktail" + idNum;
 
+    let title = document.createElement("h3");
+    title.innerHTML = name;
+    title.classList.add("cocktail-name");
+
+    q.append(title);
+
     let glass = document.createElement("div");
     glass.classList.add("ver-flex");
     glass.classList.add("center");
@@ -26,10 +32,10 @@ function createCocktail(name, ingredients, glassName, garnishes, method, idNum){
     let info = document.createElement("div");
     info.classList.add("ver-flex");
 
-    let title = document.createElement("h3");
-    title.innerHTML = name;
+    let ingTitle = document.createElement("h3");
+    ingTitle.innerHTML = "Ingredients";
 
-    info.append(title);
+    info.append(ingTitle);
 
     for(j = 0; j < ingredients.length; j++){
 
@@ -51,8 +57,28 @@ function createCocktail(name, ingredients, glassName, garnishes, method, idNum){
 
     }
 
+    let methodTitle = document.createElement("h3");
+    methodTitle.innerHTML = "Method";
+
+    info.append(methodTitle);
+
+    let methodHTML = document.createElement("div");
+    methodHTML.classList.add("hor-flex");
+    methodHTML.classList.add("center");
+
+    methodinput = document.createElement("input");
+    methodinput.setAttribute("type", "text");
+    methodinput.dataset.answer = method.toLowerCase();
+    methodHTML.append(methodinput);
+
+    info.append(methodHTML);
+
+    let garnishTitle = document.createElement("h3");
+    garnishTitle.innerHTML = "Garnishes";
+
+    info.append(garnishTitle);
+
     let garnishesHTML = document.createElement("div");
-    garnishesHTML.innerHTML = "<h5>Garnishes: </h5> ";
     garnishesHTML.classList.add("hor-flex");
 
     for(j = 0; j < garnishes.length; j++){
@@ -66,18 +92,6 @@ function createCocktail(name, ingredients, glassName, garnishes, method, idNum){
     }
 
     info.append(garnishesHTML);
-
-    let methodHTML = document.createElement("div");
-    methodHTML.classList.add("hor-flex");
-    methodHTML.classList.add("space-apart");
-    methodHTML.innerHTML = "<h5>Method: </h5> ";
-
-    methodinput = document.createElement("input");
-    methodinput.setAttribute("type", "text");
-    methodinput.dataset.answer = method.toLowerCase();
-    methodHTML.append(methodinput);
-
-    info.append(methodHTML);
     
     q.append(info);
 
@@ -226,7 +240,7 @@ function NextCocktail(){
         document.getElementById("next-button").innerHTML = "<h4>Back to Home Page</h4>";
     }
 
-    document.getElementById("cocktail"+CURRENT_QUESTION).style.display = "flex";
+    document.getElementById("cocktail"+CURRENT_QUESTION).style.display = "grid";
     document.getElementById("next-button").style.display = "none";
     document.getElementById("check-button").style.display = "block";
 
