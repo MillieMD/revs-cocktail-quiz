@@ -1,6 +1,94 @@
 var QUANTITY;
 var CURRENT_QUESTION = 0;
 
+function createCocktail(name, ingredients, glassName, garnishes, method, idNum){
+
+    let q = document.createElement("form");
+    q.classList.add("hor-flex");
+    q.classList.add("question");
+    q.id = "cocktail" + idNum;
+
+    let glass = document.createElement("div");
+    glass.classList.add("ver-flex");
+    glass.classList.add("center");
+
+    let glassImg = document.createElement("img");
+    glassImg.src = "img/" + glassName.toLowerCase() + ".png";
+    glass.append(glassImg);
+
+    let glassText = document.createElement("input");
+    glassText.id = "glass";
+    glassText.dataset.answer = glassName.toLowerCase();
+    glass.append(glassText);
+
+    q.append(glass);
+
+    let info = document.createElement("div");
+    info.classList.add("ver-flex");
+
+    let title = document.createElement("h3");
+    title.innerHTML = name;
+
+    info.append(title);
+
+    for(j = 0; j < ingredients.length; j++){
+
+        let ing = document.createElement("div");
+        ing.classList.add("hor-flex");
+        ing.classList.add("space-apart");
+        ing.id = "ingredient" + j;
+
+        let amt = document.createElement("input");
+        amt.id = "ingredient"+j;
+        amt.dataset.answer = ingredients[j].amount;
+        ing.append(amt);
+
+        let ingname = document.createElement("p");
+        ingname.innerHTML = ingredients[j].name
+        ing.append(ingname);
+
+        info.append(ing);
+
+    }
+
+    let garnishesHTML = document.createElement("div");
+    garnishesHTML.innerHTML = "<h5>Garnishes: </h5> ";
+    garnishesHTML.classList.add("hor-flex");
+
+    for(j = 0; j < garnishes.length; j++){
+
+        let g = document.createElement("input");
+        g.dataset.options = garnishes.toString().toLowerCase();
+        g.id = "garnish" + j;
+
+        garnishesHTML.append(g);
+
+    }
+
+    info.append(garnishesHTML);
+
+    let methodHTML = document.createElement("div");
+    methodHTML.classList.add("hor-flex");
+    methodHTML.classList.add("space-apart");
+    methodHTML.innerHTML = "<h5>Method: </h5> ";
+
+    methodinput = document.createElement("input");
+    methodinput.setAttribute("type", "text");
+    methodinput.dataset.answer = method.toLowerCase();
+    methodHTML.append(methodinput);
+
+    info.append(methodHTML);
+    
+    q.append(info);
+
+    if(idNum > 0){
+        q.style.display = "none";
+    }
+
+    return q;
+
+}
+
 async function pageSetup(){
 
     document.getElementById("home-page").style.display = "none";
@@ -23,17 +111,12 @@ async function pageSetup(){
 
     cocktails = cocktails.cocktails;
 
-    console.log(cocktails);
-
     response = await fetch("js/collections.json");
     collections = await response.json();
     collection = collections.collections[collectionid].included // I know it looks like gibberish, it's the collection indicated by the limiter in the array of collections within collections.json
                                                               // Probably needs better name
 
-    console.log(collection)
-
-    var i = 0;
-    for(id = 0; id < cocktails.length; id++){ // For every cocktail in the collection
+    for(id = 0, i = 0; id < cocktails.length; id++, i++){ // For every cocktail in the collection
 
         if(!collection.includes(id)){
             continue; // Only include the ones in the collection
@@ -41,92 +124,15 @@ async function pageSetup(){
 
         cocktail = cocktails[id];
 
-        console.log(id + ": loading " + cocktail.name + "... "); // TODO: remove
-
-        let q = document.createElement("form");
-        q.classList.add("hor-flex");
-        q.classList.add("question");
-        q.id = "cocktail" + i;
-
-        let glass = document.createElement("div");
-        glass.classList.add("ver-flex");
-        glass.classList.add("center");
-
-        let glassImg = document.createElement("img");
-        glassImg.src = "img/" + cocktail.glass.toLowerCase() + ".png";
-        glass.append(glassImg);
-
-        let glassText = document.createElement("input");
-        glassText.id = "glass";
-        glassText.dataset.answer = cocktail.glass.toLowerCase();
-        glass.append(glassText);
-
-        q.append(glass);
-
-        let info = document.createElement("div");
-        info.classList.add("ver-flex");
-
-        let title = document.createElement("h3");
-        title.innerHTML = cocktail.name;
-
-        info.append(title);
-
-        for(j = 0; j < cocktail.ingredients.length; j++){
-
-            let ing = document.createElement("div");
-            ing.classList.add("hor-flex");
-            ing.classList.add("space-apart");
-            ing.id = "ingredient" + j;
-
-            let amt = document.createElement("input");
-            amt.id = "ingredient"+j;
-            amt.dataset.answer = cocktail.ingredients[j].amount;
-            ing.append(amt);
-
-            let ingname = document.createElement("p");
-            ingname.innerHTML = cocktail.ingredients[j].name
-            ing.append(ingname);
-
-            info.append(ing);
-
-        }
-
-        let garnishes = document.createElement("div");
-        garnishes.innerHTML = "<h5>Garnishes: </h5> ";
-        garnishes.classList.add("hor-flex");
-
-        for(j = 0; j < cocktail.garnishes.length; j++){
-
-            let g = document.createElement("input");
-            g.dataset.options = cocktail.garnishes.toString().toLowerCase();
-            g.id = "garnish" + j;
-
-            garnishes.append(g);
-
-        }
-
-        info.append(garnishes);
-
-        let method = document.createElement("div");
-        method.classList.add("hor-flex");
-        method.classList.add("space-apart");
-        method.innerHTML = "<h5>Method: </h5> ";
-
-        methodinput = document.createElement("input");
-        methodinput.setAttribute("type", "text");
-        methodinput.dataset.answer = cocktail.method.toLowerCase();
-        method.append(methodinput);
-
-        info.append(method);
-        
-        q.append(info);
-
-        if(i > 0){
-            q.style.display = "none";
-        }
+        let q = createCocktail(
+            cocktail.name, 
+            cocktail.ingredients, 
+            cocktail.glass, 
+            cocktail.garnishes, 
+            cocktail.method,
+            i);
 
         wrapper.append(q);
-        i++;
     }
 
     let check = document.createElement("button");
